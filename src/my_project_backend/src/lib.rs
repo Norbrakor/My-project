@@ -5,7 +5,7 @@ thread_local! {
 }
 
 #[ic_cdk::update]
-fn set_msg(new_msg: String) {
+fn add_msg(new_msg: String) {
     CHAT.with(|chat| {
         chat.borrow_mut().push(new_msg)
     })
